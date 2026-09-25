@@ -1,0 +1,25 @@
+# .htaccess - اصلحه
+Options -Indexes
+DirectoryIndex index.php
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /luxury-ecommerce/
+    
+    # منع الوصول للملفات المخفية
+    RewriteRule ^\..*$ - [F,L]
+    
+    # إذا كان الملف أو المجلد موجود، لا تعيد التوجيه
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    
+    # توجيه كل الطلبات لـ index.php
+    RewriteRule ^(.*)$ index.php [QSA,L]
+</IfModule>
+
+# إعدادات الأمان الأساسية
+<IfModule mod_headers.c>
+    Header set X-Frame-Options "DENY"
+    Header set X-XSS-Protection "1; mode=block"
+    Header set X-Content-Type-Options "nosniff"
+</IfModule>
