@@ -130,9 +130,9 @@ Configure your Apache virtual host to point to `public/` directory:
 - Frontend: `http://localhost/luxury-ecommerce`
 - Admin: `http://localhost/luxury-ecommerce/admin`
 - Default Admin Credentials:
-  - Username: `admin`
-  - Email: `admin@jewelrystore.com`
-  - Password: `Admin@2024`
+  - Username:
+  - Email: 
+  - Password: 
 
 ## 🔐 Security Features
 
